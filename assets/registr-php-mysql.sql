@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 16 2023 г., 22:31
+-- Время создания: Май 18 2023 г., 20:44
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -29,21 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `fullname` varchar(128) NOT NULL,
   `login` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL
+  `password` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`) VALUES
-(1, '123', '123'),
-(7, '23', '123'),
-(8, '1234', '123'),
-(9, '34', '23'),
-(10, '1234567', '1234'),
-(11, '123456', '123');
+INSERT INTO `users` (`id`, `email`, `fullname`, `login`, `password`) VALUES
+(12, 'nik2004itamalcev@gmail.com', 'Мальцев Никита Денисович', 'pisonic', '$2y$10$OhAqHKuFVSh8L9PPJ2hPNe6R9Spr9PsR1aOZePH01kPQ59QNXJ1lW');
 
 --
 -- Индексы сохранённых таблиц
@@ -63,7 +60,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
