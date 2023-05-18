@@ -45,6 +45,16 @@
 
                                             <form action="controllers/registration.php" method="post">
                                                 <div class="form-group">
+                                                    <input type="email" name="email-reg" class="form-style" placeholder="Email" autocomplete="off">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>	
+
+                                                <div class="form-group mt-2">
+                                                    <input type="text" name="fullname-reg" class="form-style" placeholder="ФИО" autocomplete="off">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>	
+
+                                                <div class="form-group mt-2">
                                                     <input type="text" name="login-reg" class="form-style" placeholder="Логин" autocomplete="off">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>	
