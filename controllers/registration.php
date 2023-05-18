@@ -6,6 +6,8 @@ $login = filter_var(trim($_POST['login-reg']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password-reg']), FILTER_SANITIZE_STRING);
 $repassword = filter_var(trim($_POST['repassword-reg']), FILTER_SANITIZE_STRING);
 
+$hash = password_hash($password, PASSWORD_BCRYPT);
+
 $mysql = new mysqli('localhost', 'root', '', 'registr-php-mysql');
 
 $result1 = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login'");
@@ -18,7 +20,7 @@ if($password == $repassword && strlen($login) >= 6 && strlen($password) >= 3 && 
         header('Location: /pages/login_used.php');
     }
     else {
-        $mysql->query("INSERT INTO `users` (`email`, `fullname`, `login`, `password`) VALUES('$email', '$fullname', '$login', '$password')");
+        $mysql->query("INSERT INTO `users` (`email`, `fullname`, `login`, `password`) VALUES('$email', '$fullname', '$login', '$hash')");
         $mysql->close();
 
         header('Location: /pages/valid_registration.php');

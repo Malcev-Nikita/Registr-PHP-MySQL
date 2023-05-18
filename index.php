@@ -50,7 +50,7 @@
                                                 </div>	
 
                                                 <div class="form-group mt-2">
-                                                    <input type="text" name="fullname-reg" class="form-style" placeholder="ФИО" autocomplete="off">
+                                                    <input type="text" name="fullname-reg" class="form-style" placeholder="ФИО" autocomplete="off" pattern="[а-яА-ЯЁё]+\s[а-яА-ЯЁё]+\s[а-яА-ЯЁё]+">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>	
 
