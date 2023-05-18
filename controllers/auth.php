@@ -3,8 +3,6 @@ $login = filter_var(trim($_POST['login-log']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password-log']), FILTER_SANITIZE_STRING); 
  
 $mysql = new mysqli('localhost', 'root', '', 'registr-php-mysql'); 
-
-// password_verify($password, $hash);
  
 $result1 = $mysql->query("SELECT * FROM users WHERE `login`= '$login';"); 
 $user1 = $result1->fetch_assoc(); 
